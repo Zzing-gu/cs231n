@@ -74,9 +74,9 @@ class TwoLayerNet(object):
     # Store the result in the scores variable, which should be an array of      #
     # shape (N, C).                                                             #
     #############################################################################
-    n1 = X.dot(W1) + b1
-    n_ReLu = np.maximum(0, n1)
-    n2 = n_ReLu.dot(W2) + b2
+    n1 = X.dot(W1) + b1               # 입력 X 와 W1 의 dot product 를 구하고 bias 값을 더합니다.
+    n_ReLu = np.maximum(0, n1)        # 위값에 ReLu 를 실행해줍니다.  0 이하의 값은 다 0 으로 변환됩니다.
+    n2 = n_ReLu.dot(W2) + b2          # 위값 n_Rulu 와 W2 의 dot product 를 구하고 b2 를 더해 줍니다. 
     scores = n2
     #############################################################################
     #                              END OF YOUR CODE                             #
